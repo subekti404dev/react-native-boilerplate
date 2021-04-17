@@ -1,6 +1,6 @@
 import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {ActivityIndicator, SafeAreaView, StyleSheet, Text} from 'react-native';
 import NavigationUtil from '../utils/NavigationUtil';
 
 type ProfileScreenNavigationProp = StackNavigationProp<any>;
@@ -18,7 +18,8 @@ const Boot = (props: Props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Loading</Text>
+       <ActivityIndicator size={'large'}/>
+      <Text style={styles.loadingText}>Loading</Text>
     </SafeAreaView>
   );
 };
@@ -29,6 +30,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
   },
+  loadingText: {
+     marginTop: 10
+  }
 });
 
 export default Boot;
